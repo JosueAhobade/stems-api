@@ -15,14 +15,20 @@ export class User{
     @Prop({required:true,unique:true})
     email:string
 
-    @Prop({required:true,unique:true})
-    username:string
-
     @Prop({required:true})
     firstname:string
 
     @Prop({required:true})
     lastname:string
+
+    @Prop({default: false})
+    isTeacher: Boolean
+
+    @Prop({default: true})
+    isStudent: Boolean
+
+    @Prop({default: false})
+    isAdmin: Boolean
 
     @Prop({required:true})
     password:string
