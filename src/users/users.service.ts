@@ -50,9 +50,7 @@ export class UsersService {
           email,
         });
       }
-    
-
-    
+  
   findOne(id: string) {
     return this.userModel.findById(id);
   }
