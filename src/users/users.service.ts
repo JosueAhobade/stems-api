@@ -40,22 +40,22 @@ export class UsersService {
         }
         
       }
-      async findByUsername(username : string){
+    async findByUsername(username : string){
         return await this.userModel.findOne({
           username,
         });
       }
-      async findByEmail(email : string){
+    async findByEmail(email : string){
         return await this.userModel.findOne({
           email,
         });
       }
   
-  findOne(id: string) {
-    return this.userModel.findById(id);
-  }
+    findOne(id: string) {
+        return this.userModel.findById(id);
+      }
 
-  remove(id: string) {
-    return `This action removes a #${id} user`;
-  }
+    remove(id: string) {
+        return `This action removes a #${id} user`;
+      }
 }

@@ -8,6 +8,8 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { RequestsModule } from './requests/requests.module';
 import { CoursModule } from './cours/cours.module';
+import { ContactsService } from './contacts/contacts.service';
+import { ContactsModule } from './contacts/contacts.module';
 
 @Module({
   imports: [MongooseModule.forRoot('mongodb://localhost/personnel-api'),UsersModule, AuthModule,CoursModule,
@@ -17,9 +19,10 @@ import { CoursModule } from './cours/cours.module';
     secret: process.env.JWT_SECRET,
     signOptions: { expiresIn: '1d' },
   }),
-  RequestsModule
+  RequestsModule,
+  ContactsModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ContactsService],
 })
 export class AppModule {}
